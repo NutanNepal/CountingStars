@@ -1,0 +1,52 @@
+
+test = ((3,3,1,1,2,2),(1,3,1))
+n = 3
+
+def main():
+    
+    capturetest = park(test,n)
+    
+    print(capturetest)
+    
+    return
+
+
+#function that takes in a parking tuple and the largest value in the stirling permutation and outputs the
+#parking function with the number of lucky cars and which cars are lucky.
+def park(parkingtuple, n):
+    
+    #initilize the park and lucky car positions and value of at the insertion word
+    park = [0]*2*n
+    lucky = []
+    valueofinsertionword = []
+    
+    for i in range(2*n):
+        
+        #initialize parking spot to the preferred spot and test to false
+        pspot = parkingtuple[0][i] - 1
+        testforpark = False
+        while testforpark == False: 
+            
+            if park[pspot] == 0:
+                
+                park[pspot] = parkingtuple[0][i]
+                
+                testforpark = True
+                
+                # see if the car got lucky
+                if pspot + 1 == parkingtuple[0][i]:
+                    
+                    lucky = lucky + [parkingtuple[0][i]]
+                    valueofinsertionword = valueofinsertionword + [(i+1,parkingtuple[1][i])]
+                
+            else: 
+                
+                pspot = pspot + 1
+                
+    numberofluckycars = len(lucky)
+                
+     #return tuple of information 
+    return (tuple(park), tuple(lucky), tuple(valueofinsertionword), numberofluckycars)
+            
+            
+main()
