@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Page layout
+\geometry{letterpaper, margin=1in}
+
+% Theorem environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Commands
+\newcommand{\Qn}{\text{Q}_n}
+
+% Title and author
+\title{Title of the Paper}
+\author{Author Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This is the abstract of the paper. It provides a brief summary of the content.
+\end{abstract}
+
+\section{Introduction}
+
+\section{Definition}
+
+
+\section{Main Results}
+
+\begin{theorem}
+    Let $w \in \Qn$ then the parking of $w$ is also in $\Qn$.
+\end{theorem}
+
+\begin{proof}
+    Consider $i \in [n]$. We can write $w$ as $w = w(1)w(2) \ldots i \ldots j \ldots j \ldots i \ldots w(2n)$. Notice that the
+    first $i$ must park in ahead of the first $j$. If this was not the case then $j$ must be lucky while $i$ was not lucky; however, 
+    since $i$ appears before $j$, the $j$th spot would be open for $i$ to park in which is a contradiction. Thus, the first $i$ must 
+    park before the first $j$. The second pair will always be unlucky; hence, would maintain their relative order in the parking. This 
+    shows that $w$ is in $\Qn$.
+\end{proof}
+
+It turns out that the set of image of $\Qn$ under the parking map is a subset of the set of stirling permutations that is 
+easily characterized.
+
+\begin{lemma}
+    The image of $\Qn$ under the parking map is the set of stirling permutations such that $w(j) = i$ implies $i \leq j$.
+\end{lemma}
+
+\begin{proof}
+    Since a car with prefence $i$ can only park in position $i$ or later and a parked stirling permutation is a stirling permutation, 
+    we must have $w(j) = i$ parking at or after spot $i$. 
+\end{proof}
+
+In fact, we have $|p(\Qn)| = n!$ because 
+
+\subsection{Theorem and Proof}
+\begin{theorem}
+Statement of the theorem.
+\end{theorem}
+
+\begin{proof}
+Proof of the theorem.
+\end{proof}
+
+\section{Conclusion}
+The conclusion section goes here.
+
+\begin{thebibliography}{9}
+\bibitem{example} Author, \textit{Title of the Book}, Publisher, Year.
+\end{thebibliography}
+
+\end{document}
